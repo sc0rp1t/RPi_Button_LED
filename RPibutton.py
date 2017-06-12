@@ -34,7 +34,7 @@ def Blink_f(LED):
 def Blink_s(LED):
     for i in range(0, numS):
         print("LED blinking slow")
-               GPIO.output(LED, GPIO.HIGH)
+        GPIO.output(LED, GPIO.HIGH)
         sleep(sS)
         GPIO.output(LED, GPIO.LOW)
         sleep(sS)
@@ -50,8 +50,6 @@ def system_action(BUTTON):
 
         if (GPIO.input(BUTTON) == False) :           # while button is still pressed down
             button_T += 1                            # counting for how long button is pressed [(( 1=0.1s )) sleep time]
-
-        else:                                        # if button is released
 
         else:                                        # if button is released
 
@@ -81,3 +79,4 @@ try:
 
 except KeyboardInterrupt:
     GPIO.cleanup()       # clean up GPIO on keyboard interuption
+GPIO.cleanup()
